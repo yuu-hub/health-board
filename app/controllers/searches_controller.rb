@@ -1,11 +1,11 @@
 class SearchesController < ApplicationController
+  before_action :set_search, only: [:show, :edit, :update, :destroy]
   
   def index
     @searches = Search.all
   end
   
   def show
-    @search = Search.find(params[:id])
   end
 
   def new
@@ -25,12 +25,9 @@ class SearchesController < ApplicationController
   end
 
   def edit
-    @search = Search.find(params[:id])
   end
 
   def update
-    @search = Search.find(params[:id])
-    
     if @search.update(search_params)
       flash[:success] = '更新されました。'
       redirect_to @search
@@ -41,7 +38,6 @@ class SearchesController < ApplicationController
   end
 
   def destroy
-    @search = Search.find(params[:id])
     @search.destroy
     
     flash[:success] = '削除されました。'
@@ -49,6 +45,10 @@ class SearchesController < ApplicationController
   end
   
   private
+  
+    def set_search
+      @search = Search.find(params[:id])
+    end
   
     def search_params
       params.require(:search).permit(:condition_name)
