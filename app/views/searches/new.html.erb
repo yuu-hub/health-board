@@ -1,0 +1,12 @@
+<h3>症状登録ページ</h3>
+
+<%= form_with(model: @search) do |f| %>
+    <%= f.label :condition_name, '症状名' %>
+    <%= f.text_field :condition_name %>
+    <%= f.label :content, '不足している栄養素' %>
+    <%= f.text_field :content %>
+    
+    <%= f.submit '投稿' %>
+<% end %>
+
+<%= link_to '一覧に戻る', searches_path %>

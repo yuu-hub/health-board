@@ -1,3 +1,8 @@
-<h3><%= @search.condition_name %> の時に不足している栄養素</h3>
+<h3><%= @search.condition_name %> の時に不足している主な栄養素</h3>
 
 <p><%= @search.content %></p>
+
+<%= render 'searches/recipe' %>
+
+<p><%= link_to '編集', edit_search_path(@search) %> | <%= link_to '削除', @search, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></p>
+<p><%= link_to '一覧に戻る', searches_path %></p>
