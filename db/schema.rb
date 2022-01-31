@@ -10,11 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_052342) do
+ActiveRecord::Schema.define(version: 2022_01_31_032049) do
 
   create_table "searches", charset: "utf8mb4", force: :cascade do |t|
     t.string "condition_name"
     t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "food"
+    t.string "content_2"
+    t.string "food_2"
+    t.string "content_3"
+    t.string "food_3"
+    t.string "content_4"
+    t.string "food_4"
+  end
+
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

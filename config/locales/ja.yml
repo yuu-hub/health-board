@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      search: 検索
+    attributes:
+      search:
+        condition_name: 症状名

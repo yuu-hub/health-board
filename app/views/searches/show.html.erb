@@ -1,6 +1,27 @@
 <h3><%= @search.condition_name %> の時に不足している主な栄養素</h3>
 
-<p><%= @search.content %></p>
+<table border="1" style="border: 1px solid black; border-collapse: collapse;">
+    <tr>
+        <th>不足栄養素</th>
+        <th>含まれる食材</th>
+    </tr>
+    <tr>
+        <td><%= @search.content %></td>
+        <td><%= @search.food %></td>
+    </tr>
+    <tr>
+        <td><%= @search.content_2 %></td>
+        <td><%= @search.food_2 %></td>
+    </tr>
+    <tr>
+        <td><%= @search.content_3 %></td>
+        <td><%= @search.food_3 %></td>
+    </tr>
+    <tr>
+        <td><%= @search.content_4 %></td>
+        <td><%= @search.food_4 %></td>
+    </tr>
+</table>
 
 <%= render 'searches/recipe' %>
 

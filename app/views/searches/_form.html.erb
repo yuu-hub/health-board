@@ -1,8 +1,36 @@
 <%= form_with(model: search) do |f| %>
-    <%= f.label :condition_name, '症状名' %>
-    <%= f.text_field :condition_name %>
-    <%= f.label :content, '不足している栄養素' %>
-    <%= f.text_field :content %>
+  <% if search.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% search.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    <%= f.label :condition_name, '症状名:' %>
+    <%= f.text_field :condition_name %><br><br>
     
-    <%= f.submit '投稿' %>
+    <%= f.label :content, '栄養素①：' %>
+    <%= f.text_field :content %>
+    <%= f.label :food, '食材①：' %>
+    <%= f.text_field :food %><br>
+    
+    <%= f.label :content_2, '栄養素②：' %>
+    <%= f.text_field :content_2 %>
+    <%= f.label :food_2, '食材②：' %>
+    <%= f.text_field :food_2 %><br>
+    
+    <%= f.label :content_3, '栄養素③：' %>
+    <%= f.text_field :content_3 %>
+    <%= f.label :content_3, '食材③：' %>
+    <%= f.text_field :food_3 %><br>
+    
+    <%= f.label :content_4, '栄養素④：' %>
+    <%= f.text_field :content_4 %>
+    <%= f.label :content_4, '食材④：' %>
+    <%= f.text_field :food_4 %><br><br>
+    
+    <%= f.submit '登録' %>
 <% end %>

@@ -51,7 +51,8 @@ class SearchesController < ApplicationController
     end
   
     def search_params
-      params.require(:search).permit(:condition_name)
-      params.require(:search).permit(:content)
+      params.require(:search).permit(
+        :condition_name, :content, :food,
+        :content_2, :food_2, :content_3, :food_3, :content_4, :food_4)
     end
 end
