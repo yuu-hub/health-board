@@ -14,8 +14,74 @@
  *= require_self
  */
  
+h1,h2,h3,h4,h5,h6,p,a {
+   color: #676767;
+}
+
+body {
+ background-color: #f9f9f9;
+}
  
  ul li {
      list-style: none;
-     padding-left: 0;
+     margin-left: 0;
  }
+ 
+/*ナビバー*/
+.navbar-brand {
+ margin-left: 36px;
+}
+
+.navbar-nav {
+ flex-direction: row;
+}
+
+#nav li {
+  margin-right: 30px;
+}
+
+/*トップページの症状一覧メニュー*/
+.menu {
+  display: inline-block;
+  font-size: 1.25em;
+  margin-right: 8px;
+  transition: all  0.3s ease;
+}
+
+.menu a {
+  color: #676767;
+}
+
+.menu:hover {
+  background-color: #b3e0eb;
+}
+
+/*登録・ログインボタン*/
+.submit {
+ background-color: #b3e0eb;
+ border-radius: 7px;
+ transition: .3s;
+ border: none;
+ padding: 5px 30px; 
+}
+
+.submit:hover {
+  filter: opacity(70%);
+  cursor: pointer;
+}
+
+/*編集・削除・戻るのメニュー*/
+.page-menu {
+ color: #676767;
+ transition: all  0.3s ease;
+}
+
+.page-menu:hover {
+ color: #36adcb;
+}
+
+
+/*詳細ページ*/
+.container {
+ margin-top: 24px;
+}

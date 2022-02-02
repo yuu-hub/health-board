@@ -2,8 +2,6 @@
 
 <ul>
   <% @searches.each do |search| %>
-    <li><%= link_to search.condition_name, search %></li>
+    <li class="menu"><%= link_to search.condition_name, search %></li>
   <% end %>
 </ul>
-
-<%= link_to '症状の新規登録', new_search_path %>

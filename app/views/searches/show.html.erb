@@ -1,6 +1,7 @@
+<div class="container">
 <h3><%= @search.condition_name %> の時に不足している主な栄養素</h3>
 
-<table border="1" style="border: 1px solid black; border-collapse: collapse;">
+<table class="table table-sm">
     <tr>
         <th>不足栄養素</th>
         <th>含まれる食材</th>
@@ -25,5 +26,6 @@
 
 <%= render 'searches/recipe' %>
 
-<p><%= link_to '編集', edit_search_path(@search) %> | <%= link_to '削除', @search, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></p>
-<p><%= link_to '一覧に戻る', searches_path %></p>
+<p><%= link_to '編集', edit_search_path(@search), class: "page-menu" %> | <%= link_to '削除', @search, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "page-menu" %></p>
+<p><%= link_to '一覧に戻る', searches_path, class: "page-menu" %></p>
+</div>
