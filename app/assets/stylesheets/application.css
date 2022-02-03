@@ -40,16 +40,25 @@ body {
   margin-right: 30px;
 }
 
+.btn-light {
+ margin-right: 30px;
+ color: #676767;
+}
+
 /*トップページの症状一覧メニュー*/
 .menu {
   display: inline-block;
+  border: 1px solid #333;
   font-size: 1.25em;
-  margin-right: 8px;
+  padding: 10px 20px;
+  margin: 5px 8px;
+  border-radius: 7px;
   transition: all  0.3s ease;
 }
 
 .menu a {
   color: #676767;
+  text-decoration: none;
 }
 
 .menu:hover {
