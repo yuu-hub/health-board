@@ -13,57 +13,83 @@
  *= require_tree .
  *= require_self
  */
+
  
 h1,h2,h3,h4,h5,h6,p,a {
    color: #676767;
 }
 
 body {
- background-color: #f9f9f9;
+ background-color: #FFFEFE;
 }
  
  ul li {
-     list-style: none;
-     margin-left: 0;
+  list-style: none;
+  margin-left: 0;
  }
- 
+
 /*ナビバー*/
 .navbar-brand {
  margin-left: 36px;
-}
-
-.navbar-nav {
- flex-direction: row;
 }
 
 #nav li {
   margin-right: 30px;
 }
 
-.btn-light {
+.btn-dark {
  margin-right: 30px;
+}
+
+
+ul li .nav-link {
+ padding: 0;
+}
+
+ul li .nav-link:hover {
+ opacity: 0.7;
+ transition: all  0.3s ease;
  color: #676767;
 }
 
+.dropdown-nav-link {
+ color: #616060;
+ text-decoration: none;
+}
+
+.dropdown-nav-link:hover {
+ color: #616060;
+ text-decoration: none;
+ opacity: 0.7;
+ transition: all  0.3s ease;
+}
+
 /*トップページの症状一覧メニュー*/
-.menu {
-  display: inline-block;
+.menu_link:hover {
+  color: #676767;
+  background-color: #b3e0eb;
+}
+
+.menu_link {
+  display: block;
   border: 1px solid #333;
-  font-size: 1.25em;
-  padding: 10px 20px;
+  width: 180px;
   margin: 5px 8px;
+  padding: 10px 20px;
   border-radius: 7px;
+  color: #676767;
+  font-size: 1.25em;
+  text-decoration: none;
+  text-align:center;
   transition: all  0.3s ease;
 }
 
-.menu a {
-  color: #676767;
-  text-decoration: none;
+.wrapper {
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
 }
-
-.menu:hover {
-  background-color: #b3e0eb;
-}
+ 
 
 /*登録・ログインボタン*/
 .submit {
@@ -78,6 +104,21 @@ body {
   filter: opacity(70%);
   cursor: pointer;
 }
+
+/*お気に入り解除ボタン*/
+.unlikes {
+ background-color: #d3d3d3;
+ border-radius: 7px;
+ transition: .3s;
+ border: none;
+ padding: 5px 30px; 
+}
+
+.submit:hover {
+  filter: opacity(70%);
+  cursor: pointer;
+}
+
 
 /*編集・削除・戻るのメニュー*/
 .page-menu {

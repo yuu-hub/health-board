@@ -1,20 +1,20 @@
-<nav class="navbar navbar-dark" style="background-color: #36adcb">
+<nav class="navbar navbar-light" style="background-color: #b3e0eb">
     <div>
-        <a class="navbar-brand" href="/">HealthBoard</a>
+        <a class="navbar-brand" style="color: #676767" href="/">HealthBoard</a>
     </div> 
     <!--メニュー項目-->
 <% if logged_in? %>
-<button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><%= current_user.name %></button>
+<button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:#616060;"><%= current_user.name %>さん</button>
   <ul class="dropdown-menu dropdown-menu-end">
-    <li class="dropdown-item"><%= link_to 'マイページ', user_path(current_user), class: 'nav-link' %></li>
-    <li class="dropdown-divider"></li>
-    <li class="dropdown-item"><%= link_to '症状登録', new_search_path, class: "nav-link" %></li>
-    <li class="dropdown-divider"></li>
-    <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: "nav-link" %></li>
+    <li class="nav-item"><%= link_to 'マイページ', user_path(current_user), class: 'dropdown-nav-link' %></li>
+    <li><hr class="dropdown-divider"></li>
+    <li class="nav-item"><%= link_to '症状登録', new_search_path, class: "dropdown-nav-link" %></li>
+    <li><hr class="dropdown-divider"></li>
+    <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: "dropdown-nav-link" %></li>
   </ul>
 <% else %>
    <div id="nav">
-    <ul class="navbar-nav">
+    <ul class="navbar">
         <li class="nav-item"><%= link_to '新規登録', signup_path, class: 'nav-link' %></li>
         <li class="nav-item"><%= link_to 'ログイン', login_path, class: "nav-link" %></li>
     </ul>

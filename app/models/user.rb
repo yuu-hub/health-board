@@ -5,4 +5,22 @@ class User < ApplicationRecord
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
                     uniqueness: { case_sensitive: false }
     has_secure_password
+    
+    has_many :searches
+    has_many :favorites, dependent: :destroy
+    has_many :likes, through: :favorites, source: :search
+    
+    # お気に入り登録機能
+    def like(search)
+        self.favorites.find_or_create_by(search_id: search.id)
+    end
+    
+    def unlike(search)
+        favorite = self.favorites.find_by(search_id: search.id)
+        favorite.destroy if favorite
+    end
+    
+    def likes?(search)
+        self.likes.include?(search)
+    end
 end

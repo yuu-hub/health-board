@@ -40,7 +40,6 @@ class SearchesController < ApplicationController
 
   def destroy
     @search.destroy
-    
     flash[:success] = '削除されました。'
     redirect_to searches_url
   end

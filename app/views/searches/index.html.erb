@@ -1,7 +1,10 @@
-<h2>症状一覧</h2>
-
-<ul>
-  <% @searches.each do |search| %>
-    <li class="menu"><%= link_to search.condition_name, search %></li>
-  <% end %>
-</ul>
+<h3>からだの症状</h3>
+<div class="container">
+  <div class="wrapper">
+    
+      <% @searches.each do |search| %>
+          <%= link_to search.condition_name, search, class: "menu_link" %></i>
+      <% end %>
+    </ul>
+  </div>
+</div>

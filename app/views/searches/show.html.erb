@@ -1,6 +1,12 @@
 <div class="container">
 <h3><%= @search.condition_name %> の時に不足している主な栄養素</h3>
 
+<% if logged_in? %>
+    <div>
+       <%= render 'favorites/favorite_button', search: @search %> 
+    </div>
+<% end %>
+
 <table class="table table-sm">
     <tr>
         <th>不足栄養素</th>
@@ -24,8 +30,11 @@
     </tr>
 </table>
 
-<%= render 'searches/recipe' %>
+<%= render 'recipes/recipe' %>
 
-<p><%= link_to '編集', edit_search_path(@search), class: "page-menu" %> | <%= link_to '削除', @search, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "page-menu" %></p>
+<% if logged_in? %>
+    <p><%= link_to '編集', edit_search_path(@search), class: "page-menu" %> | <%= link_to '削除', @search, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "page-menu" %></p>
+<% end %>
+
 <p><%= link_to '一覧に戻る', searches_path, class: "page-menu" %></p>
 </div>

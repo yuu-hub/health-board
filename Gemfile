@@ -53,3 +53,7 @@ group :production do
 end
 
 gem 'rails-i18n'
+
+gem 'sqlite3', '~> 1.3.6'
+
+gem "font-awesome-rails"

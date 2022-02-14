@@ -1,0 +1,11 @@
+<% if current_user.likes?(search) %>
+      <%= form_with(model: current_user.favorites.find_by(search_id: search.id), method: :delete) do |f| %>
+        <%= hidden_field_tag :search_id, search.id %>
+        <%= f.submit 'お気に入り解除', class: 'unlikes' %>
+      <% end %>
+    <% else %>
+      <%= form_with(model: current_user.favorites.build) do |f| %>
+        <%= hidden_field_tag :search_id, search.id %>
+        <%= f.submit 'お気に入り登録', class: 'submit' %>
+      <% end %>
+<% end %>

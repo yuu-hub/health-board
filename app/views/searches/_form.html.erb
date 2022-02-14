@@ -8,43 +8,44 @@
       </ul>
     </div>
   <% end %>
-  <div class="mb-3">
-    <%= f.label :condition_name, '症状名:' %>
-    <div class="col-12">
+  <div class="container">
+    <div class="mb-4">
+      <%= f.label :condition_name, '症状名　：' %>
       <%= f.text_field :condition_name %>      
     </div>
-  </div>
+    
+    <div class="form-inline mb-3">
+        
+      <%= f.label :content, '栄養素１：' %>
+      <%= f.text_field :content %>
   
-  <div class="form-inline mb-3">  
-    <%= f.label :content, '栄養素１：' %>
-    <%= f.text_field :content %>
-
-    <%= f.label :food, '食材１：' %>
-    <%= f.text_field :food %>
-  </div>
-  
-  <div class="form-inline mb-3"> 
-    <%= f.label :content_2, '栄養素２：' %>
-    <%= f.text_field :content_2 %>
+      <%= f.label :food, '食材１：' %>
+      <%= f.text_field :food %>
+    </div>
     
-    <%= f.label :food_2, '食材２：' %>
-    <%= f.text_field :food_2 %>
-  </div>
-  
-  <div class="form-inline mb-3">   
-    <%= f.label :content_3, '栄養素３：' %>
-    <%= f.text_field :content_3 %>
+    <div class="form-inline mb-3"> 
+      <%= f.label :content_2, '栄養素２：' %>
+      <%= f.text_field :content_2 %>
+      
+      <%= f.label :food_2, '食材２：' %>
+      <%= f.text_field :food_2 %>
+    </div>
     
-    <%= f.label :content_3, '食材３：' %>
-    <%= f.text_field :food_3 %>
-  </div>
-    
-  <div class="form-inline mb-3"> 
-    <%= f.label :content_4, '栄養素４：' %>
-    <%= f.text_field :content_4 %>
-    
-    <%= f.label :content_4, '食材４：' %>
-    <%= f.text_field :food_4 %>
+    <div class="form-inline mb-3">   
+      <%= f.label :content_3, '栄養素３：' %>
+      <%= f.text_field :content_3 %>
+      
+      <%= f.label :content_3, '食材３：' %>
+      <%= f.text_field :food_3 %>
+    </div>
+      
+    <div class="form-inline mb-3"> 
+      <%= f.label :content_4, '栄養素４：' %>
+      <%= f.text_field :content_4 %>
+      
+      <%= f.label :content_4, '食材４：' %>
+      <%= f.text_field :food_4 %>
+    </div>
   </div>
     
     <%= f.submit '登録', class: 'submit' %>
