@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @searches = @user.searches.order(id: :desc)
   end
 
   def new
@@ -30,5 +31,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+  
+  def admin_user
+      redirect_to(root_url) unless current_user.admin?
   end
 end

@@ -1,14 +1,22 @@
 <nav class="navbar navbar-light" style="background-color: #b3e0eb">
     <div>
-        <a class="navbar-brand" style="color: #676767" href="/">HealthBoard</a>
+        <a class="navbar-brand" style="color: #676767" href="/">
+            <img src="../assets/nav_logo.png" alt="ナビバーロゴ">
+        </a>
     </div> 
     <!--メニュー項目-->
+<!--<%# if admin_user %>-->
+<!--<button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:#616060;"><%#= current_user.name %>さん</button>-->
+<!--  <ul class="dropdown-menu dropdown-menu-end">-->
+<!--    <li class="nav-item"><%#= link_to 'マイページ', user_path(current_user), class: 'dropdown-nav-link' %></li>-->
+<!--    <li><hr class="dropdown-divider"></li>-->
+<!--    <li class="nav-item"><%#= link_to 'マイページ', user_path(current_user), class: 'dropdown-nav-link' %></li>-->
+<!--    <li><hr class="dropdown-divider"></li>-->
+<!--    <li class="nav-item"><%#= link_to 'ログアウト', logout_path, method: :delete, class: "dropdown-nav-link" %></li>-->
 <% if logged_in? %>
 <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:#616060;"><%= current_user.name %>さん</button>
   <ul class="dropdown-menu dropdown-menu-end">
     <li class="nav-item"><%= link_to 'マイページ', user_path(current_user), class: 'dropdown-nav-link' %></li>
-    <li><hr class="dropdown-divider"></li>
-    <li class="nav-item"><%= link_to '症状登録', new_search_path, class: "dropdown-nav-link" %></li>
     <li><hr class="dropdown-divider"></li>
     <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: "dropdown-nav-link" %></li>
   </ul>

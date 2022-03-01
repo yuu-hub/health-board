@@ -27,6 +27,7 @@ body {
   list-style: none;
   margin-left: 0;
  }
+ 
 
 /*ナビバー*/
 .navbar-brand {
@@ -64,7 +65,22 @@ ul li .nav-link:hover {
  transition: all  0.3s ease;
 }
 
+/*トップページの画像*/
+.main_logo {
+ text-align: center;
+}
+
 /*トップページの症状一覧メニュー*/
+
+.top_title {
+ margin: 20px 0px;
+}
+
+.wrapper {
+ width: 700px;
+ margin: 0 auto;
+}
+
 .menu_link:hover {
   color: #676767;
   background-color: #b3e0eb;
@@ -114,7 +130,11 @@ ul li .nav-link:hover {
  padding: 5px 30px; 
 }
 
-.submit:hover {
+.unlikes:hover {
+   filter: opacity(70%);
+}
+
+.favorite_button:hover {
   filter: opacity(70%);
   cursor: pointer;
 }
@@ -134,4 +154,11 @@ ul li .nav-link:hover {
 /*詳細ページ*/
 .container {
  margin-top: 24px;
+}
+
+
+/*レシピAPI*/
+.recipe-thumbnail {
+ width: 100px;
+ height: auto;
 }

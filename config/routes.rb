@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
     root to: 'searches#index'
     
     get 'login', to: 'sessions#new'

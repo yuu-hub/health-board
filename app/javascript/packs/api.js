@@ -1,13 +1,27 @@
-const API_KEY = 'AIzaSyAJCDSQx3tpg2O0Axt2PrKwH9oYfcpm_Rc';
+// リクエストパラメータを作る
+const apiKey = 'AIzaSyAJCDSQx3tpg2O0Axt2PrKwH9oYfcpm_Rc';
+const cx = 'fee06ffd8f22fe8d1';
+const keyword = '鉄分 レシピ';
 
-const parameters = $.param({
-  method: 'google.search',
-  api_key: API_KEY,
-  text: '鉄分 レシピ', // 検索テキスト
-  sort: 'interestingness-desc', // 興味深さ順
-  per_page: 5, // 取得件数
-  license: '4', // Creative Commons Attributionのみ
-  extras: 'owner_name,license', // 追加で取得する情報
-  format: 'json', // レスポンスをJSON形式に
-  nojsoncallback: 1, // レスポンスの先頭に関数呼び出しを含めない
-});
+// const parameters = {
+//   apiKey: apiKey,
+//   per_page: 5,
+// };
+
+const url = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${keyword}`;
+console.log(url);
+
+new Vue({
+    el: '#recipe',
+    data: {
+      items: [],
+    },
+    created() {
+      fetch(url)
+      .then((response) => response.json())
+      .then((data) =>{
+        this.items = data.items;
+        
+      });
+    }
+  })
