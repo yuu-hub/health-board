@@ -2,12 +2,6 @@
 const apiKey = 'AIzaSyAJCDSQx3tpg2O0Axt2PrKwH9oYfcpm_Rc';
 const cx = 'fee06ffd8f22fe8d1';
 const keyword = '鉄分 レシピ';
-
-// const parameters = {
-//   apiKey: apiKey,
-//   per_page: 5,
-// };
-
 const url = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${keyword}`;
 console.log(url);
 
