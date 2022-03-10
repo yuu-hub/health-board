@@ -11,7 +11,7 @@ const keyword = '鉄分 レシピ';
 const url = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${keyword}`;
 console.log(url);
 
-new Vue({
+const app = new Vue({
     el: '#recipe',
     data: {
       items: [],
