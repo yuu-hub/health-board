@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_16_023924) do
+ActiveRecord::Schema.define(version: 2022_03_10_005131) do
 
   create_table "admins", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -55,6 +55,10 @@ ActiveRecord::Schema.define(version: 2022_02_16_023924) do
     t.string "food_3"
     t.string "content_4"
     t.string "food_4"
+    t.bigint "user_id"
+    t.bigint "admin_id"
+    t.index ["admin_id"], name: "index_searches_on_admin_id"
+    t.index ["user_id"], name: "index_searches_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
@@ -68,4 +72,6 @@ ActiveRecord::Schema.define(version: 2022_02_16_023924) do
 
   add_foreign_key "favorites", "searches"
   add_foreign_key "favorites", "users"
+  add_foreign_key "searches", "admins"
+  add_foreign_key "searches", "users"
 end

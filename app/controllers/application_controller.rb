@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
             redirect_to root_url
         end
     end
+    
+    def admin_user
+         @admin = Admin.find(params[:id])
+    end
 end

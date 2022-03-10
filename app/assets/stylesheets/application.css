@@ -38,7 +38,7 @@ body {
   margin-right: 30px;
 }
 
-.btn-dark {
+.btn-light {
  margin-right: 30px;
 }
 
@@ -119,6 +119,10 @@ ul li .nav-link:hover {
 .submit:hover {
   filter: opacity(70%);
   cursor: pointer;
+}
+
+.field {
+ margin-bottom: 10px;
 }
 
 /*お気に入り解除ボタン*/

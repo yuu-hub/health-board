@@ -32,7 +32,7 @@
 
 <%= render 'recipes/recipe' %>
 
-<% if logged_in? %>
+<% if admin_signed_in? %>
     <p><%= link_to '編集', edit_search_path(@search), class: "page-menu" %> | <%= link_to '削除', @search, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "page-menu" %></p>
 <% end %>
 
