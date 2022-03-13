@@ -159,10 +159,3 @@ ul li .nav-link:hover {
 .container {
  margin-top: 24px;
 }
-
-
-/*レシピAPI*/
-.recipe-thumbnail {
- width: 100px;
- height: auto;
-}

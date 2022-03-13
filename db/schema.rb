@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_10_005131) do
+ActiveRecord::Schema.define(version: 2022_03_13_065945) do
 
   create_table "admins", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,15 +32,6 @@ ActiveRecord::Schema.define(version: 2022_03_10_005131) do
     t.index ["search_id"], name: "index_favorites_on_search_id"
     t.index ["user_id", "search_id"], name: "index_favorites_on_user_id_and_search_id", unique: true
     t.index ["user_id"], name: "index_favorites_on_user_id"
-  end
-
-  create_table "recipes", charset: "utf8mb4", force: :cascade do |t|
-    t.string "recipe_1"
-    t.string "recipe_2"
-    t.string "recipe_3"
-    t.string "recipe_4"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "searches", charset: "utf8mb4", force: :cascade do |t|

@@ -6,6 +6,7 @@
     </div> 
     
 <!--メニュー項目-->
+    <!--一般ログイン時のナビバー-->
     <% if logged_in? %>
         <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:#b3e0eb"><%= current_user.name %>さん</button>
           <ul class="dropdown-menu dropdown-menu-end">
@@ -13,6 +14,7 @@
             <li><hr class="dropdown-divider"></li>
             <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: "dropdown-nav-link" %></li>
           </ul>
+    <!--管理者ログイン時のナビバー      -->
      <% elsif admin_signed_in? %>
         <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:#b3e0eb;">管理者</button>
           <ul class="dropdown-menu dropdown-menu-end">
@@ -20,6 +22,7 @@
             <li><hr class="dropdown-divider"></li>
             <li class="nav-item"><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "dropdown-nav-link" %></li>
           </ul>
+    <!--未ログイン時のナビバー-->
     <% else %>
        <div id="nav">
         <ul class="navbar">
